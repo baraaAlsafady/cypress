@@ -42,7 +42,7 @@ which will install Cypress and other supporting tools
 
 To run admin almosafer homepage test:
 
-1) Inside the terminal run `npm open cypress`
+1) Inside the terminal run `npx open cypress`
 2) From inside the cypress window click on Home_page.json to run the test.
 3) To run the HTML report inside your terminal run `npx cypress run --reporter mochawesome`
 
