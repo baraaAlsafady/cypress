@@ -1,0 +1,153 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2022-01-22T12:31:43.063Z",
+    "end": "2022-01-22T12:32:04.040Z",
+    "duration": 20977,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "95d885d7-ff7b-4a4d-9c87-0e5464f280e8",
+      "title": "",
+      "fullFile": "cypress/integration/alamosafer_test/home_page.js",
+      "file": "cypress/integration/alamosafer_test/home_page.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ffa9b204-61ff-460e-a73d-7a63a4a53a5d",
+          "title": "test almosafer homepage",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should have all homepage elements",
+              "fullTitle": "test almosafer homepage should have all homepage elements",
+              "timedOut": null,
+              "duration": 6305,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homePage.navigate('https://almosafer.com'); //a. Default language is correct (AR)\nhomePage.verifyCurrentUrllanguage('https://almosafer.com', 'ar'); //b. Default currency is correct (SAR)\nhomePage.verifyCurrencyDdlLabel('SAR '); //c. Contact numbers are correct (check yourself)\nhomePage.verifyContactNumber('+966554400000'); //d. Verify “qitaf” logo is displayed in footer\nhomePage.scrollToFooter();\nhomePage.verifyQitafLogo();\nhomePage.scrollToHeader(); //e. Hotels search tab is NOT selected by default\nhomePage.verifyHotelsSearchButton(); // f. Flight departure date is set to “today+1day” by default\nhomePage.verifyFlightDeparturedate(); // g. Flight return date is set to “today+2days” by default\nhomePage.verifyFlightReturnedate(); //h. Make any other assertions that you want to do (upto your testing mindset!)\nhomePage.verifyTheFlightSection();\nhomePage.verifyTheHotelSection();",
+              "err": {},
+              "uuid": "8cee32b1-b281-4089-8d4f-a446e67d7e25",
+              "parentUUID": "ffa9b204-61ff-460e-a73d-7a63a4a53a5d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should change the language correctlly",
+              "fullTitle": "test almosafer homepage should change the language correctlly",
+              "timedOut": null,
+              "duration": 6676,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "homePage.navigate('https://almosafer.com');\ncy.wait(50000); //3. Use random method to change language (sometime keep AR, sometime change to EN)\nhomePage.changelanguage();",
+              "err": {
+                "message": "CypressError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > undefined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "CypressError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > undefined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\nError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > undefined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\nError\n",
+                "diff": null
+              },
+              "uuid": "2e9debe0-e0db-44a0-b30d-7b923e5d48df",
+              "parentUUID": "ffa9b204-61ff-460e-a73d-7a63a4a53a5d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should have the hotel tab, and the functions should be working probably",
+              "fullTitle": "test almosafer homepage should have the hotel tab, and the functions should be working probably",
+              "timedOut": null,
+              "duration": 3668,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "homePage.navigate('https://almosafer.com');\nhomePage.switchToHotelTab();\nhomePage.addInputBasedOnLanguageAndClick(); //5. Randomly select “1 room, 2 adults, 0 children” or “1 room, 1 adult, 0 children” option\nhomePage.selectRoomOption(); //6. Click on search hotels button\nhomePage.clickOnSearchHotelBtn(); //7. On new page (which is ‘search results page’)\n//a. Wait for loading to fully complete (wait for loading bar or API, up to you)\nhomePage.waitUntillSearchLoaded(); //b. *important*: do some assertions (which assertions to do ? identify yourself)\n//hotel label is inside the search result.\nhomePage.SearchResultContainsHotels(); //8. Apply sorting option by “LOWEST PRICE”\nhomePage.applyLowestPrice();",
+              "err": {
+                "message": "CypressError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > undefined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "CypressError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > undefined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\nError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > undefined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\nError\n",
+                "diff": null
+              },
+              "uuid": "b1be5e8e-418c-4e1a-a30d-89f1a9154e1b",
+              "parentUUID": "ffa9b204-61ff-460e-a73d-7a63a4a53a5d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8cee32b1-b281-4089-8d4f-a446e67d7e25"
+          ],
+          "failures": [
+            "2e9debe0-e0db-44a0-b30d-7b923e5d48df",
+            "b1be5e8e-418c-4e1a-a30d-89f1a9154e1b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 16649,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report"
+      },
+      "version": "6.0.1"
+    }
+  }
+}

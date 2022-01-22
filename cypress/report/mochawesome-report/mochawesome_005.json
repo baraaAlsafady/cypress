@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-01-22T12:29:55.070Z",
+    "end": "2022-01-22T12:29:55.334Z",
+    "duration": 264,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "291bd099-4296-4a2e-8d70-592cdd9608c9",
+      "title": "",
+      "fullFile": "cypress/integration/alamosafer_test/home_page.js",
+      "file": "cypress/integration/alamosafer_test/home_page.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ecce2415-e627-4235-b60a-c4a6e45366c8",
+          "title": "test almosafer homepage",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should change the language correctlly",
+              "fullTitle": "test almosafer homepage should change the language correctlly",
+              "timedOut": null,
+              "duration": 210,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "homePage.navigate('https://almosafer.com').then(() => {\n  homePage.changelanguage();\n}); //3. Use random method to change language (sometime keep AR, sometime change to EN)",
+              "err": {
+                "message": "TypeError: Cannot read properties of undefined (reading 'then')",
+                "estack": "TypeError: Cannot read properties of undefined (reading 'then')\n    at Context.eval (http://localhost:56912/__cypress/tests?p=cypress/integration/alamosafer_test/home_page.js:172:47)",
+                "diff": null
+              },
+              "uuid": "0e9bbbe1-527a-4b1b-89d7-7f515603f7c7",
+              "parentUUID": "ecce2415-e627-4235-b60a-c4a6e45366c8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "0e9bbbe1-527a-4b1b-89d7-7f515603f7c7"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 210,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/report/mochawesome-report"
+      },
+      "version": "6.0.1"
+    }
+  }
+}
