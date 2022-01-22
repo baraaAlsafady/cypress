@@ -1,9 +1,6 @@
 # cypress
-test almosafer app using cypress
 
-# cypress-e2e-tests
-
-This repo contains e2e tests written in Cypress for different edX applications
+test almosafer app using cypress.
 
 ---
 ---
