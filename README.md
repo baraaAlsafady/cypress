@@ -27,44 +27,6 @@ Also as a starting point it would be good to go through these tutorial videos
 ---
 ---
 
-## E2E Tests Repo
-
-This repo is meant to contain multiple projects, for now there is one project:
-
-Enterprise Admin Portals (Active)
-
-With time we will add more projects in the repo
-
----
----
-
-## Protocols for Test Design
-
-We don't yet have well defined protocols for writing Cypress tests for edX application, so this work was mostly experimental
-
-The first project was MIT Journals (which has since been deprecated and removed).
-
-In the second project, Enterprise Admin Portal, the following approach was used:
-
-* Page Object model is used in spite of what Cypress site says, it increases readability of code and is much easier to manage
-
-* Instead of using arrow functions traditional named functions are used, this is done to to be able to use **this**, which is not working with arrow functions
-
-* Cypress commands and helper functions are still utilized
-
-The tests for Enterprise Admin Portal are present in following path
-
-<https://github.com/edx/cypress-e2e-tests/tree/master/cypress/integration/admin_portal>
-
-To manage multiple projects customized config files are used so user is able to run any project without making any change in the code
-
-Config files for projects are placed here
-
-<https://github.com/edx/cypress-e2e-tests/tree/master/config>
-
----
----
-
 ## Test Setup
 
 ### Installations
@@ -113,62 +75,11 @@ _Note_: You can use the method descibed in the below link to get these auth toke
 
 ---
 
-### Run Tests
-
-To run admin portal tests in interactive mode use following command
-
-`npm run cy:open_admin_portal`
-
-To run admin portal tests in normal mode use following command
-
-`npm run cy:run_admin_portal`
-
----
-
-### Using ES LInt
-
-ESLint is also setup in the repo, you can use it by typing following command in terminal
-
-`npm run lint`
-
----
-
-## Docker Setup
-
-Docker setup is also available for those who want to run the tests without doing any installations
-
-To run the tests in Docker
-
-* Provide the values for environment variables in the env_vars.env
-* Use following command in terminal
-        `docker-compose -f docker-compose.yml -f cy-run.yml up`
-
----
-
-## Running Tests in Interactive Mode using Docker
-
-You can also execute tests in interactive mode directly from Docker, for that you would need to do
-some extra steps
-
-As a pre-requisite you need to install XQuartz using following command
-
-`brew cask install xquartz`
-
-or install it directly from <https://www.xquartz.org/>
-
-### To configure XQuartz
-
-* Open XQuartz using following command in terminal
-  * `open -a XQuartz`
-* In the XQuartz preferences, go to the “Security” tab and make sure you’ve got “Allow connections from network clients” ticked
-
 ### To run the tests
 
-* Provide the values for environment variables in the env_vars.env
-* Grab the IP of the host machine and add it to the allowed X11 hosts by running these commands
-  * `IP=$(ipconfig getifaddr en0)`
-  * `/usr/X11/bin/xhost + $IP`
-* Pass the environment variable DISPLAY to show Cypress GUI on the host system
-  * `DISPLAY=$IP:0`
-* Use following command in terminal
-  * `docker-compose -f docker-compose.yml -f cy-open.yml up`
+To run admin almosafer homepage test:
+
+1) Inside the terminal run `npm open cypress`
+2) From inside the cypress window click on Home_page.json to run the test.
+3) To run the HTML report inside your terminal run `npx cypress run --reporter mochawesome`
+
